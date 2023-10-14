@@ -1,5 +1,9 @@
-runtime: custom
-env: flex
-#build:
-#  docker:
-#    web: Dockerfile
+runtime: go121
+env_variables:
+  PORT: 8080
+  UPSTREAM: http://1.2.3.4/
+# replace with your backend VM's ip
+instance_class: F1
+automatic_scaling:
+  max_instances: 1
+  min_instances: 1
